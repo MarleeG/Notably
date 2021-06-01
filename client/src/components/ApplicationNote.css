@@ -1,0 +1,26 @@
+.application-note {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  background: #f1f3f3;
+  color: black;
+  text-align: center;
+  padding: 5px;
+  word-spacing: 5px;
+  font-size: 15px;
+  letter-spacing: 2px;
+  /* background: linear-gradient(90deg, #f4cfcf 0, #e0a4a4 100%); */
+
+  background: rgb(244, 207, 207);
+  background: linear-gradient(
+    90deg,
+    rgba(244, 207, 207, 0.8197478820629814) 0%,
+    rgba(224, 164, 164, 0.6404761733795081) 38%,
+    rgba(222, 185, 252, 0.30714284004617476) 89%
+  );
+}
+
+a:hover {
+  text-decoration: none;
+}
