@@ -1,0 +1,24 @@
+.auth-container {
+  border-style: solid;
+  width: 50%;
+  border-width: 2px;
+  border-image: radial-gradient(
+      rgba(222, 185, 252, 0.30714284004617476),
+      rgba(224, 164, 164, 0.6404761733795081),
+      rgba(244, 207, 207, 0.8197478820629814)
+    )
+    1;
+
+  /* background: -webkit-gradient( radial, <point>, <radius>, <point>, <radius>[, <stop>]* ) <color>; */
+
+  border-radius: 15px;
+  padding: 2px;
+}
+
+.auth-container__auth-methods {
+  /* border: 2px dotted green; */
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
