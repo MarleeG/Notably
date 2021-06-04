@@ -1,4 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, Fragment } from "react";
+import { Form } from "react-bootstrap";
+import Input from "../UIElements/Input";
 
 import "./Auth.css";
 const Auth = (props) => {
@@ -8,22 +10,37 @@ const Auth = (props) => {
   const AUTH_METHOD_STYLES = {
     selected: {
       background: "blue",
-      border: '2px solid red',
-      borderBottom: 'none',
-      width: '50%',
-      borderTopLeftRadius: '5px',
-      borderTopRightRadius: '5px',
-
-
+      border: "2px solid red",
+      borderBottom: "none",
+      width: "50%",
+      borderTopLeftRadius: "5px",
+      borderTopRightRadius: "5px",
     },
     default: {
       background: "#fff",
-      width: '50%',
-      borderBottom: '2px solid red'
+      width: "50%",
+      borderBottom: "2px solid red",
     },
   };
-
   const [currentAuthMethod, setCurrentAuthMethod] = useState(SIGN_IN);
+
+
+  const signInFields = () => {
+    return <Fragment>
+      <Input type="text" placeholder="enter your username" label="Sign In"/>
+      <Input type="password" placeholder="enter your password"/>
+
+    </Fragment>
+  }
+
+
+  const signUpFields = () => {
+    return <Fragment>
+      <Input type="text" placeholder="create a username" label="Sign Up"/>
+      <Input type="password" placeholder="create a password"/>
+      <Input type="password" placeholder="re-type password"/>
+    </Fragment>
+  }
 
   useEffect(() => {}, []);
   return (
@@ -53,12 +70,13 @@ const Auth = (props) => {
 
       <div className="auth-container__fields">
         <div className="auth-conatiner__sign-in-fields">
-          Sign in fields here
+          <Form>
+
+            {currentAuthMethod === SIGN_IN ? signInFields() : signUpFields()}
+          </Form>
         </div>
 
-        <div className="auth-conatiner__sign-up-fields">
-          Sign up fields here
-        </div>
+        <div className="auth-conatiner__sign-up-fields"></div>
       </div>
     </div>
   );
